@@ -17,4 +17,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  // Badges de logro: mostrar/ocultar la etiqueta al presionar (funciona en mobile y desktop)
+  const badges = document.querySelectorAll(".badge-trophy");
+  badges.forEach((badge) => {
+    badge.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const wasOpen = badge.classList.contains("is-open");
+      badges.forEach((b) => b.classList.remove("is-open"));
+      if (!wasOpen) badge.classList.add("is-open");
+    });
+  });
+  document.addEventListener("click", () => {
+    badges.forEach((b) => b.classList.remove("is-open"));
+  });
 });
