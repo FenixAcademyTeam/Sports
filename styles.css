@@ -33,7 +33,7 @@
 :root{
   --t-fire:#ff6b4a; --t-water:#3fb6ff; --t-grass:#5ee08a; --t-electric:#ffd23f;
   --t-psychic:#ff6bc4; --t-dragon:#8f6bff; --t-dark:#8d8da3; --t-steel:#b9c2d0;
-  --t-fairy:#ff9ad4; --t-ghost:#9b6bd6; --t-ice:#79e0e0; --t-ground:#d3a24a;
+  --t-fairy:#ff9ad4; --t-ghost:#9b6bd6; --t-ice:#79e0e0; --t-ground:#d3a24a; --t-poison:#c26bd9;
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
@@ -207,9 +207,9 @@ body{
 .hero h1{
   font-family:var(--font-display);
   font-weight:700;
-  font-size:clamp(3.4rem, 9vw, 6.4rem);
-  line-height:0.92;
-  letter-spacing:0.01em;
+  font-size:clamp(1.9rem, 3.6vw, 3.4rem);
+  line-height:1.25;
+  letter-spacing:0.005em;
   margin:0 0 22px;
   background:linear-gradient(120deg, #ffffff 30%, var(--violet) 65%, var(--cyan) 100%);
   -webkit-background-clip:text;
@@ -292,7 +292,7 @@ body{
 .log-body{ padding:32px 30px 36px; }
 .log-line{
   display:grid;
-  grid-template-columns:150px 1fr;
+  grid-template-columns:180px 1fr;
   gap:24px;
   padding:20px 0;
   border-bottom:1px dashed var(--line);
@@ -576,5 +576,5 @@ body{
   .site-header.open .nav-links a{ padding:12px 0; width:100%; }
   .nav-cta{ display:none; }
   .hero{ padding:64px 0 56px; }
-  .hero h1{ font-size:clamp(2.6rem, 12vw, 3.6rem); }
+  .hero h1{ font-size:clamp(1.6rem, 6.4vw, 2.2rem); line-height:1.3; }
 }

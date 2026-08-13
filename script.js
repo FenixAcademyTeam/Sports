@@ -1,4 +1,4 @@
-// 31IV — interacciones mínimas
+// Fénix Academy — interacciones mínimas
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".site-header");
   const toggle = document.querySelector(".nav-toggle");
