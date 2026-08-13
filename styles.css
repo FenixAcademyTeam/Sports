@@ -549,6 +549,111 @@ body{
 .roster-full .roster-grid{ grid-template-columns:repeat(auto-fit, minmax(270px, 1fr)); }
 
 /* ==========================================================================
+   Temporadas / logros
+   ========================================================================== */
+.seasons{ padding:70px 0 100px; }
+.seasons-list{
+  display:flex;
+  flex-direction:column;
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+.season-card{ background:var(--bg-alt); padding:34px 32px; }
+
+.season-head{
+  display:flex; align-items:baseline; justify-content:space-between;
+  flex-wrap:wrap; gap:14px;
+  margin-bottom:16px;
+  padding-bottom:16px;
+  border-bottom:1px dashed var(--line);
+}
+.season-head-left{ display:flex; align-items:baseline; gap:16px; }
+.season-num{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:2.4rem;
+  line-height:1;
+  background:linear-gradient(120deg, #ffffff, var(--violet));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.season-title{ display:flex; flex-direction:column; gap:4px; }
+.season-title h3{
+  font-family:var(--font-display);
+  font-size:1.4rem;
+  font-weight:700;
+  margin:0;
+}
+.season-title span{
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--text-faint);
+}
+.season-status{
+  font-family:var(--font-mono);
+  font-size:0.68rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  padding:6px 12px;
+  border:1px solid var(--line-strong);
+  white-space:nowrap;
+  height:fit-content;
+}
+.season-status.is-active{
+  color:var(--violet);
+  border-color:var(--violet-dim);
+  background:rgba(232,33,79,0.08);
+}
+
+.season-summary{
+  color:var(--text-dim);
+  font-size:0.96rem;
+  max-width:70ch;
+  margin:0 0 22px;
+}
+
+.achievements{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+.achievement{
+  display:flex; align-items:flex-start; gap:12px;
+  padding:12px 14px;
+  border:1px solid var(--line);
+  background:var(--surface);
+}
+.achievement .ach-icon{ font-size:1.1rem; line-height:1.3; flex-shrink:0; }
+.achievement .ach-body{ display:flex; flex-direction:column; gap:2px; }
+.achievement .ach-player{
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  color:var(--violet);
+}
+.achievement .ach-text{ font-size:0.92rem; color:var(--text); }
+.achievement .ach-date{
+  font-family:var(--font-mono);
+  font-size:0.68rem;
+  color:var(--text-faint);
+  margin-left:auto;
+  padding-left:12px;
+  white-space:nowrap;
+}
+
+.achievements-empty{
+  font-family:var(--font-mono);
+  font-size:0.78rem;
+  color:var(--text-faint);
+  padding:14px;
+  border:1px dashed var(--line-strong);
+}
+
+@media (max-width: 640px){
+  .achievement{ flex-wrap:wrap; }
+  .achievement .ach-date{ margin-left:0; padding-left:0; }
+}
+
+/* ==========================================================================
    Responsive
    ========================================================================== */
 @media (max-width: 900px){
