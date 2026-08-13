@@ -1,26 +1,27 @@
 /* ==========================================================================
-   31IV — Design tokens
+   Fénix Academy — Design tokens
    ========================================================================== */
 :root{
-  --bg:        #08080d;
-  --bg-alt:    #0e0e16;
-  --surface:   #14141f;
-  --surface-2: #191926;
+  --bg:        #0b0607;
+  --bg-alt:    #120a0b;
+  --surface:   #1a0f10;
+  --surface-2: #221315;
   --line:      rgba(255,255,255,0.08);
   --line-strong: rgba(255,255,255,0.16);
 
-  --text:      #f2f1f6;
-  --text-dim:  #9c9aac;
-  --text-faint:#5f5d70;
+  --text:      #f5efe6;
+  --text-dim:  #b3a199;
+  --text-faint:#6b5a58;
 
-  --violet:    #b14eff;
-  --violet-dim:#7c3fb0;
-  --cyan:      #00e5ff;
-  --magenta:   #ff2e6d;
+  /* Fénix Academy — carmesí, negro y crema, tomados del escudo */
+  --violet:    #e8214f;   /* carmesí principal */
+  --violet-dim:#9c1338;   /* carmesí profundo */
+  --cyan:      #ff6b7d;   /* ember / rosa-fuego secundario */
+  --magenta:   #f1c77a;   /* dorado-crema, del lettering del logo */
 
   --grad-shard: conic-gradient(from 220deg, var(--violet), var(--cyan), var(--magenta), var(--violet));
 
-  --font-display: "Rajdhani", sans-serif;
+  --font-display: "Cinzel", serif;
   --font-body:    "Manrope", sans-serif;
   --font-mono:    "JetBrains Mono", monospace;
 
@@ -74,8 +75,8 @@ a:focus-visible, button:focus-visible{
    ========================================================================== */
 body{
   background-image:
-    radial-gradient(circle at 12% 8%, rgba(177,78,255,0.10), transparent 45%),
-    radial-gradient(circle at 88% 18%, rgba(0,229,255,0.08), transparent 40%),
+    radial-gradient(circle at 12% 8%, rgba(232,33,79,0.12), transparent 45%),
+    radial-gradient(circle at 88% 18%, rgba(241,199,122,0.06), transparent 40%),
     linear-gradient(var(--bg), var(--bg));
   background-attachment:fixed;
 }
@@ -101,6 +102,11 @@ body{
   letter-spacing:0.02em;
 }
 .brand .shard-mini{ width:22px; height:22px; }
+.brand-logo{
+  width:44px; height:44px;
+  object-fit:contain;
+  filter:drop-shadow(0 0 8px rgba(232,33,79,0.45));
+}
 .brand small{
   display:block;
   font-family:var(--font-mono);
@@ -241,7 +247,19 @@ body{
 .btn-ghost:hover{ border-color:var(--violet); color:var(--violet); transform:translateY(-2px); }
 
 .hero-shard-wrap{ position:relative; }
-.hero-shard-wrap .shard{ --spin: 30s; filter:drop-shadow(0 0 46px rgba(177,78,255,0.35)); }
+.hero-shard-wrap .shard{ --spin: 30s; filter:drop-shadow(0 0 46px rgba(232,33,79,0.35)); }
+
+.hero-logo{
+  width:100%;
+  max-width:420px;
+  margin:0 auto;
+  filter:drop-shadow(0 0 50px rgba(232,33,79,0.4)) drop-shadow(0 0 90px rgba(241,199,122,0.12));
+  animation:logo-float 6s ease-in-out infinite;
+}
+@keyframes logo-float{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-10px); }
+}
 
 /* ==========================================================================
    Terminal / log section (about)
