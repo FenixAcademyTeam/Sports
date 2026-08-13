@@ -15,21 +15,6 @@ fenix-academy/
 └── README.md
 ```
 
-## Cómo subirlo a GitHub Pages
-
-1. Creá un repositorio nuevo en GitHub (por ejemplo `fenix-academy`).
-2. En tu compu, dentro de esta carpeta:
-   ```bash
-   git init
-   git add .
-   git commit -m "Sitio inicial de Fénix Academy"
-   git branch -M main
-   git remote add origin https://github.com/TU-USUARIO/fenix-academy.git
-   git push -u origin main
-   ```
-3. En GitHub: **Settings → Pages → Source**, elegí la rama `main` y la carpeta `/ (root)`.
-4. En un par de minutos el sitio va a estar en `https://TU-USUARIO.github.io/fenix-academy/`.
-
 ## Qué falta personalizar
 
 - Nombres, roles, bios y Tera types reales de los 3 jugadores en `index.html` y `roster.html`.
