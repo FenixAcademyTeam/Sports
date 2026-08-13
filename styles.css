@@ -103,9 +103,8 @@ body{
 }
 .brand .shard-mini{ width:22px; height:22px; }
 .brand-logo{
-  width:44px; height:44px;
+  width:46px; height:46px;
   object-fit:contain;
-  filter:drop-shadow(0 0 8px rgba(232,33,79,0.45));
 }
 .brand small{
   display:block;
@@ -246,14 +245,21 @@ body{
 }
 .btn-ghost:hover{ border-color:var(--violet); color:var(--violet); transform:translateY(-2px); }
 
-.hero-shard-wrap{ position:relative; }
-.hero-shard-wrap .shard{ --spin: 30s; filter:drop-shadow(0 0 46px rgba(232,33,79,0.35)); }
+.hero-shard-wrap{ position:relative; display:grid; place-items:center; }
+.hero-shard-wrap::before{
+  content:"";
+  position:absolute;
+  width:70%; height:70%;
+  background:radial-gradient(circle, rgba(232,33,79,0.35), rgba(232,33,79,0.08) 55%, transparent 72%);
+  filter:blur(20px);
+  z-index:0;
+}
 
 .hero-logo{
+  position:relative;
+  z-index:1;
   width:100%;
-  max-width:420px;
-  margin:0 auto;
-  filter:drop-shadow(0 0 50px rgba(232,33,79,0.4)) drop-shadow(0 0 90px rgba(241,199,122,0.12));
+  max-width:400px;
   animation:logo-float 6s ease-in-out infinite;
 }
 @keyframes logo-float{
@@ -382,7 +388,7 @@ body{
   color:var(--text-dim);
   margin-bottom:18px;
 }
-.type-chip{
+.fav-chip{
   display:inline-flex; align-items:center; gap:7px;
   font-family:var(--font-mono);
   font-size:0.68rem;
@@ -392,13 +398,44 @@ body{
   border:1px solid var(--line-strong);
   margin-bottom:18px;
 }
-.type-chip::before{
-  content:"";
-  width:7px; height:7px;
-  border-radius:50%;
-  background:var(--chip-color, var(--cyan));
-  box-shadow:0 0 8px var(--chip-color, var(--cyan));
+.fav-chip::before{
+  content:"★";
+  color:var(--chip-color, var(--cyan));
+  font-size:0.8rem;
+  line-height:1;
 }
+.fav-chip b{
+  font-weight:600;
+  color:var(--text);
+  text-transform:none;
+  letter-spacing:0.01em;
+  font-size:0.74rem;
+}
+
+.player-paste{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:10px;
+  margin:0 0 20px;
+  padding:11px 13px;
+  border:1px dashed var(--line-strong);
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+}
+.player-paste .paste-label{
+  color:var(--text-faint);
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.player-paste a{
+  color:var(--cyan);
+  border-bottom:1px solid transparent;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  transition:border-color .2s ease, color .2s ease;
+}
+.player-paste a:hover{ border-color:var(--cyan); }
 .player-bio{
   font-size:0.92rem;
   color:var(--text-dim);
