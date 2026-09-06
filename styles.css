@@ -702,6 +702,110 @@ body{
 }
 
 /* ==========================================================================
+   Torneo interno en vivo (widget temporal)
+   ========================================================================== */
+.tourney-card{
+  border:1px solid var(--line);
+  background:var(--surface);
+  margin-bottom:36px;
+}
+.tourney-head{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:18px 22px;
+  background:var(--bg-alt);
+  border-bottom:1px solid var(--line);
+  flex-wrap:wrap;
+}
+.tourney-logo{ width:38px; height:38px; object-fit:contain; flex-shrink:0; }
+.tourney-head-text{ flex:1; min-width:160px; }
+.tourney-live{
+  display:flex; align-items:center; gap:7px;
+  font-family:var(--font-mono);
+  font-size:0.64rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--violet);
+}
+.tourney-live::before{
+  content:"";
+  width:6px; height:6px;
+  border-radius:50%;
+  background:var(--violet);
+  box-shadow:0 0 8px var(--violet);
+  animation:tourney-pulse 1.6s ease-in-out infinite;
+}
+@keyframes tourney-pulse{
+  0%,100%{ opacity:1; }
+  50%{ opacity:0.3; }
+}
+.tourney-head-text h3{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.5rem;
+  margin:3px 0 0;
+}
+.tourney-day{
+  font-family:var(--font-mono);
+  font-size:0.75rem;
+  color:var(--text-dim);
+  white-space:nowrap;
+}
+.tourney-day strong{ color:var(--text); }
+
+.tourney-table-wrap{ overflow-x:auto; }
+.tourney-table{
+  width:100%;
+  border-collapse:collapse;
+  font-family:var(--font-mono);
+  min-width:420px;
+}
+.tourney-table th{
+  text-align:left;
+  font-size:0.66rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--text-faint);
+  padding:12px 22px;
+  border-bottom:1px solid var(--line);
+  white-space:nowrap;
+}
+.tourney-table td{
+  padding:14px 22px;
+  border-bottom:1px solid var(--line);
+  font-size:0.95rem;
+  color:var(--text);
+}
+.tourney-table tbody tr:last-child td{ border-bottom:none; }
+.tourney-table tbody tr:first-child td{ background:rgba(232,33,79,0.07); }
+.tourney-table .col-pos{ color:var(--text-faint); width:1%; }
+.tourney-table .col-pts,
+.tourney-table th.col-pts,
+.tourney-table .col-pct,
+.tourney-table th.col-pct{ text-align:right; font-variant-numeric:tabular-nums; }
+.tourney-table .pct-up{ color:#5ee08a; font-weight:600; }
+.tourney-table .is-drop td{ opacity:0.75; }
+.tourney-table .pct-drop{
+  color:#ff4d6d;
+  font-weight:700;
+  letter-spacing:0.04em;
+}
+.tourney-note{
+  padding:13px 22px;
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  color:var(--text-faint);
+  border-top:1px dashed var(--line);
+}
+
+@media (max-width:640px){
+  .tourney-head{ padding:16px 18px; }
+  .tourney-table th, .tourney-table td{ padding:12px 16px; }
+  .tourney-note{ padding:12px 18px; }
+}
+
+/* ==========================================================================
    Responsive
    ========================================================================== */
 @media (max-width: 900px){
